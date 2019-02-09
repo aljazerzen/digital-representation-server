@@ -1,6 +1,6 @@
 # Motivation
 
-> TLDR; a few mechanisms such as user authentication are implemented on almost every online system. It seems reasonable to define protocols that could handle them, so the responsibility of their implementation, maintenance and improvement could be shifted from online systems to the protocols and they could provide greater user experience compared to an average current implementation.   
+> TLDR; almost every online system implements a few mechanisms such as user authentication. It seems reasonable to define protocols that could handle these mechanisms, so the responsibility of their implementation, maintenance and improvement could be shifted from online systems to the protocols and they could provide greater user experience compared to an average current implementation.   
 
 Almost all websites and online systems consist of several "parts" that can be seen across the internet. 
 
