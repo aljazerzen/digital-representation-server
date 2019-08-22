@@ -1,10 +1,10 @@
-# Motivation
+# Abstraction
 
-> TLDR; almost every online system implements a few mechanisms such as user authentication. It seems reasonable to define protocols that could handle these mechanisms, so the responsibility of their implementation, maintenance and improvement could be shifted from online systems to the protocols and they could provide greater user experience compared to an average current implementation.   
+> TLDR; almost every online service implements a few mechanisms such as user authentication. It seems reasonable to define protocols that could handle these mechanisms, so the responsibility of their implementation, maintenance and improvement could be shifted from online systems to the protocols and they could provide greater user experience compared to an average current implementation.   
 
 Almost all websites and online systems consist of several "parts" that can be seen across the internet. 
 
-For example, a simple web store selling some home-made products has:
+For example, a simple web store selling some home-made products consists of:
 - page(s) presenting the merchant & their store
 - catalogue browser
 - registration & login mechanism
@@ -29,12 +29,10 @@ Social media/streaming site:
 - (payment)
 - actual site providing the service
 
-It can be easily seen, that a lot of these sites have quite a few segments in common. For example registration & login mechanism and some form of payment are present on examples. 
+It can be easily seen that these sites have some common parts. For example registration & login mechanism is present on all examples. Following common sense, these parts should be implemented only once and every site would be using that implementation. 
 
-As a programmer, I have an intuitive idea that those parts of the sites should be implemented only once and every site would be using that implementation. 
-
-Before doing such a thing, we must consider whether it is cost effective to do this on not. After all, login & registration is a very basic idea, right? When you think about it, actually no, it is not. If using standard email & password, authentication mechanism, sites have to implement safe storage of the credentials, email verification and password reset mechanism. If the site is deemed to have higher security, it should also implement multiple factor authentication (SMS, notification or some other login) and some form of detection of suspicious logins. 
-From the user's view point, authentication systems could also benefit from some standardization. Different password requirements, a lot of passwords to remember and insecure/slow implantations of the mechanism are something we are all familiar with. 
+Before doing such a thing, we must consider whether it is cost effective to do this on not. After all, login & registration is a very basic idea, right? When you think about it, actually no, it is not. If using standard email & password authentication mechanism, sites have to implement safe storage of the credentials, email verification and password reset mechanism. If the site is deemed to have higher security, it should also implement multiple factor authentication (SMS, notification or some other login) and some form of detection of suspicious logins. 
+From the user's point of view, authentication systems could also benefit from some standardization. Different password requirements, a lot of passwords to remember and insecure or slow implementations of the mechanism are something we are all familiar with. 
 
 It is obvious that we would all benefit from "shift of implementation of the authentication mechanism", so the first question is how would that work in our case of the sites distributed across the internet?
 
@@ -53,7 +51,7 @@ In essence mathematics is just abstracting ideas away from actual problems, solv
 
 ## Programming languages
 
-To all the programmers reading this it is obvious what I am talking about: inheritance in object oriented programming. When you have a bunch of objects with common properties or functions, you can create the general, abstracted object. For example, when creating a UI, usually there are buttons to be programmed. All of the buttons should have a gray border, should be rounded and show an animation when clicked. So you create such an object and every time you need a button, you just use the one you have already created. But sometimes you would also need it to have a black background, so you create a new child object extending the original one. This means that the child inherits all properties of the original button but can also define its own. This approach has the following advantages:
+To all the programmers reading this it is obvious what I am talking about: inheritance in object oriented programming. When you have a bunch of objects with common properties or functions, you can create the general, abstracted object. For example, when creating a UI, usually there are buttons to be programmed. All of the buttons should have a gray border, should be rounded and show an animation when clicked. So you create such an object and every time you need a button, you just use the one you have already created. But sometimes you would also need it to have a black background, so you create a new child object extending the original one. Now the child inherits all properties of the original button but can also define its own. This approach has the following advantages:
 - usually there is less code to write, to have bugs and to maintain 
 - when requirements change and all the buttons should not be rounded, you can just change the original button and the change will affect all of its descendants. This also goes for when there is bug with the button animation that has to be fixed.
 Of course there are disadvantages. Bad implementation can be overly complex and even harder to maintain, since changes of an object can influence large number of other objects.
