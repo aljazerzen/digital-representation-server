@@ -1,10 +1,29 @@
-Digital Representative Server is an idea of a protocol bundle, that would simplify architecture of most of the websites and online systems.
+## Problem
 
-Core proposal is a server that would represent an individual or a company in the digital world and interact with online system for them. It can be though as an email server, only that it could provide services such as:
+> Internet would benefit from distributed protocols for commonly used services.
+
+Examples of commonly used services:
 - authentication
-- communication (email, real-time messaging)
-- payment gateway
-- service/product browsing and ordering
+- communication (email, instant messaging)
+- payments
+- product browsing and ordering (online shop)
+- social media
+
+Current average implementation of commonly used services:
+- lacks control over stored user data
+- cannot interact with other implementations of the service
+- has no standard format for specifying addresses, locations or other objects
+- is difficult to transition to another service implementation
+
+Additionally, every implementation induces development and maintenance costs.
+
+## Solution
+
+**Digital Representative Server** is an idea of a protocol bundle, whose goal is to solve problems outlined above and simplify architecture of most websites and online services.
+
+Core proposal is a server that would represent an individual or a company in the digital world and interact with online services for them. It would be like an email server, only that it could provide multiple services.
+
+----
 
 The whole concept is currently under development. 
 
